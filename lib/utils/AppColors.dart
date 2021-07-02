@@ -6,5 +6,9 @@ class AppColors{
   static const Color white = const Color(0xFFFFFFFF);
   static const Color black = const Color(0xFF000000);
   static const Color lightGreen = const Color(0xFF00D4FF);
+  static const Color homebg = const Color(0xFFE7E9EF);
+  static const Color accountbgcolor = const Color(0xFFD9F5FF);
+  static const Color allaccounttextcolor = const Color(0xFF176785);
+  static const Color allaccountbgcolor = const Color(0xFF176785);
 
 }

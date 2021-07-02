@@ -34,7 +34,7 @@ class HomeScreenState extends State<HomeScreen> {
     timer = Timer.periodic(Duration(seconds: 1), (_) {
       setState(() {
         percent += 1;
-        if (percent >= 3) {
+        if (percent >= 2) {
           timer.cancel();
         }
         nextScreen();

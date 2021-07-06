@@ -4,14 +4,15 @@ import 'package:dairy_newdeskapp/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 
 import 'MainScreen.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
   ));
 }
-class HomeScreen extends StatefulWidget {
 
+class HomeScreen extends StatefulWidget {
   @override
   HomeScreenState createState() => HomeScreenState();
 }
@@ -21,7 +22,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-
     // TODO: implement initState
     super.initState();
     /*new Future.delayed(
@@ -31,10 +31,10 @@ class HomeScreenState extends State<HomeScreen> {
               MaterialPageRoute(builder: (context) => MainScreen()),
             ));*/
     Timer timer;
-    timer = Timer.periodic(Duration(seconds: 1), (_) {
+    timer = Timer.periodic(Duration(milliseconds: 100), (_) {
       setState(() {
         percent += 1;
-        if (percent >= 2) {
+        if (percent >= 1) {
           timer.cancel();
         }
         nextScreen();
@@ -44,17 +44,13 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       body: Container(
-
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assests/image/splashbg.png"),
                   fit: BoxFit.cover)),
           child: Center(
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +87,8 @@ class HomeScreenState extends State<HomeScreen> {
                           height: 10,
                           child: LinearProgressIndicator(
                             backgroundColor: AppColors.blueDark,
-                            valueColor: AlwaysStoppedAnimation(AppColors.lightBlue),
+                            valueColor:
+                                AlwaysStoppedAnimation(AppColors.lightBlue),
                             minHeight: 10,
                           )),
 
@@ -111,7 +108,7 @@ class HomeScreenState extends State<HomeScreen> {
       Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => MainScreen()),
-              (route) => false);
+          (route) => false);
     });
   }
 }

@@ -10,5 +10,8 @@ class AppColors{
   static const Color accountbgcolor = const Color(0xFFD9F5FF);
   static const Color allaccounttextcolor = const Color(0xFF176785);
   static const Color allaccountbgcolor = const Color(0xFF176785);
+  static const Color greencolor = const Color(0xFF53D000);
+  static const Color grey = const Color(0xFFA3A3A3);
+  static const Color greyhint = const Color(0xFF000000);
 
 }

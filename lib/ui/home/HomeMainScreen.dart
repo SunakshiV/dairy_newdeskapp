@@ -1,5 +1,34 @@
 import 'dart:math';
 
+import 'package:dairy_newdeskapp/ui/accounts/AddAccounts.dart';
+import 'package:dairy_newdeskapp/ui/accounts/All%20Accounts.dart';
+import 'package:dairy_newdeskapp/ui/accounts/BankAccounts.dart';
+import 'package:dairy_newdeskapp/ui/help/FAQ.dart';
+import 'package:dairy_newdeskapp/ui/help/HelpDesk.dart';
+import 'package:dairy_newdeskapp/ui/help/Services.dart';
+import 'package:dairy_newdeskapp/ui/help/Version.dart';
+import 'package:dairy_newdeskapp/ui/setting/Analyze.dart';
+import 'package:dairy_newdeskapp/ui/setting/EditPass.dart';
+import 'package:dairy_newdeskapp/ui/setting/EditUser.dart';
+import 'package:dairy_newdeskapp/ui/setting/EdtSnf.dart';
+import 'package:dairy_newdeskapp/ui/setting/Formatdate.dart';
+import 'package:dairy_newdeskapp/ui/setting/Language.dart';
+import 'package:dairy_newdeskapp/ui/setting/Resolution.dart';
+import 'package:dairy_newdeskapp/ui/setting/Weighing.dart';
+import '../reports/ItemSaleReport.dart';
+import 'package:dairy_newdeskapp/ui/accounts/PaymentReport.dart';
+import 'package:dairy_newdeskapp/ui/accounts/SaleReport.dart';
+import 'package:dairy_newdeskapp/ui/accounts/StockReport.dart';
+import 'package:dairy_newdeskapp/ui/accounts/UnionReport.dart';
+import 'package:dairy_newdeskapp/ui/reports/PurchaseReport.dart';
+import 'package:dairy_newdeskapp/ui/task/Bonus.dart';
+import 'package:dairy_newdeskapp/ui/task/Deduct.dart';
+import 'package:dairy_newdeskapp/ui/task/Dispatch.dart';
+import 'package:dairy_newdeskapp/ui/task/ItemSale.dart';
+import 'package:dairy_newdeskapp/ui/task/MilkCollection.dart';
+import 'package:dairy_newdeskapp/ui/task/MilkSale.dart';
+import 'package:dairy_newdeskapp/ui/task/Payments.dart';
+import 'package:dairy_newdeskapp/ui/task/StockUpdate.dart';
 import 'package:dairy_newdeskapp/utils/AppColors.dart';
 import 'package:dairy_newdeskapp/utils/SizeConfig.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,7 +58,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
   Color color =
       Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
 
-  int select,valueRadio;
+  int select, valueRadio;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +71,10 @@ class HomeScreenMainState extends State<HomeMainScreen> {
             Container(
               //   width: MediaQuery.of(context).size.width/2,
               alignment: Alignment.topRight,
-
-              width: SizeConfig.blockSizeHorizontal * 30,
+              margin: EdgeInsets.only(
+                left: SizeConfig.blockSizeHorizontal * 3,
+              ),
+              width: SizeConfig.blockSizeHorizontal * 20,
               child: Column(children: <Widget>[
                 Image.asset(
                   'assests/image/home.png',
@@ -188,6 +219,12 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          expandFlag1 = false;
+                                          expandFlag2 = false;
+                                          expandFlag3 = false;
+                                          expandFlag4 = false;
+                                          expandFlag5 = false;
+                                          expandFlag6 = false;
                                           expandFlag0 = !expandFlag0;
                                         });
                                       }),
@@ -247,6 +284,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag2 = false;
+                                        expandFlag3 = false;
+                                        expandFlag4 = false;
+                                        expandFlag5 = false;
+                                        expandFlag6 = false;
+
                                         expandFlag1 = !expandFlag1;
                                       });
                                     }),
@@ -305,6 +349,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag1 = false;
+                                        expandFlag3 = false;
+                                        expandFlag4 = false;
+                                        expandFlag5 = false;
+                                        expandFlag6 = false;
+
                                         expandFlag2 = !expandFlag2;
                                       });
                                     }),
@@ -363,6 +414,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag1 = false;
+                                        expandFlag2 = false;
+                                        expandFlag4 = false;
+                                        expandFlag5 = false;
+                                        expandFlag6 = false;
+
                                         expandFlag3 = !expandFlag3;
                                       });
                                     }),
@@ -421,6 +479,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag1 = false;
+                                        expandFlag3 = false;
+                                        expandFlag2 = false;
+                                        expandFlag5 = false;
+                                        expandFlag6 = false;
+
                                         expandFlag4 = !expandFlag4;
                                       });
                                     }),
@@ -479,6 +544,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag1 = false;
+                                        expandFlag3 = false;
+                                        expandFlag4 = false;
+                                        expandFlag2 = false;
+                                        expandFlag6 = false;
+
                                         expandFlag5 = !expandFlag5;
                                       });
                                     }),
@@ -537,6 +609,13 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                     ),
                                     onPressed: () {
                                       setState(() {
+                                        expandFlag0 = false;
+                                        expandFlag1 = false;
+                                        expandFlag3 = false;
+                                        expandFlag4 = false;
+                                        expandFlag5 = false;
+                                        expandFlag2 = false;
+
                                         expandFlag6 = !expandFlag6;
                                       });
                                     }),
@@ -577,17 +656,16 @@ class HomeScreenMainState extends State<HomeMainScreen> {
               ]),
             ),
             Container(
-              width: SizeConfig.blockSizeHorizontal * 70,
+              width: SizeConfig.blockSizeHorizontal * 72,
               decoration: BoxDecoration(color: Colors.white),
               alignment: Alignment.topLeft,
               child: Column(children: <Widget>[
                 Container(
                   height: SizeConfig.blockSizeVertical * 10,
                   width: SizeConfig.blockSizeHorizontal * 75,
-                  color: AppColors.white,
                 ),
                 Container(
-                  width: SizeConfig.blockSizeHorizontal * 65,
+                  width: SizeConfig.blockSizeHorizontal * 72,
                   height: SizeConfig.blockSizeVertical * 80,
                   color: AppColors.homebg,
                   child: rightView(type),
@@ -623,26 +701,38 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   ),
                 )),
             Container(
-              margin: EdgeInsets.only(
-                  left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Add Accounts',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
+                margin: EdgeInsets.only(
+                    left: SizeConfig.blockSizeHorizontal * 4,
+                    top: SizeConfig.blockSizeHorizontal * 1.5),
+                alignment: Alignment.topLeft,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      type = "add account";
+                    });
+                  },
+                  child: Text(
+                    'Add Accounts',
+                    style: TextStyle(color: AppColors.white, fontSize: 10),
+                  ),
+                )),
             Container(
-              margin: EdgeInsets.only(
-                  left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1,
-                  bottom: SizeConfig.blockSizeHorizontal * 1),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Bank Accounts',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
+                margin: EdgeInsets.only(
+                    left: SizeConfig.blockSizeHorizontal * 4,
+                    bottom: SizeConfig.blockSizeHorizontal * 1,
+                    top: SizeConfig.blockSizeHorizontal * 1.5),
+                alignment: Alignment.topLeft,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      type = "bank account";
+                    });
+                  },
+                  child: Text(
+                    'Bank Accounts',
+                    style: TextStyle(color: AppColors.white, fontSize: 10),
+                  ),
+                )),
           ],
         ),
       ),
@@ -656,13 +746,36 @@ class HomeScreenMainState extends State<HomeMainScreen> {
         child: Column(
           children: <Widget>[
             Container(
+                margin: EdgeInsets.only(
+                    left: SizeConfig.blockSizeHorizontal * 4,
+                    top: SizeConfig.blockSizeHorizontal * 1.5),
+                alignment: Alignment.topLeft,
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      type = "milk collection";
+                    });
+                  },
+                  child: Text(
+                    'Milk Collection',
+                    style: TextStyle(color: AppColors.white, fontSize: 10),
+                  ),
+                )),
+            Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1.5),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Milk Collection',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "milk sale";
+                  });
+                },
+                child: Text(
+                  'Milk Sale',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -670,64 +783,84 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   left: SizeConfig.blockSizeHorizontal * 4,
                   top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Milk Sale',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "item sale";
+                  });
+                },
+                child: Text(
+                  'Item Sale',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Item Sale',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "payment";
+                  });
+                },
+                child: Text(
+                  'Payments',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Payments',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "stoke update";
+                  });
+                },
+                child: Text(
+                  'Stock update',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Stock Update',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "dispatch";
+                  });
+                },
+                child: Text(
+                  'Dispatch',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Dispatch',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Deduction',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "deduct";
+                  });
+                },
+                child: Text(
+                  'Deduct',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -736,9 +869,16 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   top: SizeConfig.blockSizeHorizontal * 1,
                   bottom: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Bonus',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "bonus";
+                  });
+                },
+                child: Text(
+                  'Bonus',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
           ],
@@ -756,11 +896,18 @@ class HomeScreenMainState extends State<HomeMainScreen> {
             Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1.5),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Purchase Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "purchase report";
+                  });
+                },
+                child: Text(
+                  'Purchase Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -768,53 +915,86 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   left: SizeConfig.blockSizeHorizontal * 4,
                   top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Sale Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Item Sale Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Payment Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Stock Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "sale report";
+                  });
+                },
+                child: Text(
+                  'Sale Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1,
-                  bottom: SizeConfig.blockSizeHorizontal * 1),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Unio Sale Report',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "item sale report";
+                  });
+                },
+                child: Text(
+                  'Item Sale Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "payment report";
+                  });
+                },
+                child: Text(
+                  'Payment Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "stock report";
+                  });
+                },
+                child: Text(
+                  'Stock Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: SizeConfig.blockSizeHorizontal * 4,
+                top: SizeConfig.blockSizeHorizontal * 1,
+                bottom: SizeConfig.blockSizeHorizontal * 1,
+              ),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "union report";
+                  });
+                },
+                child: Text(
+                  'Union Sale Report',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
           ],
@@ -909,11 +1089,18 @@ class HomeScreenMainState extends State<HomeMainScreen> {
             Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1.5),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Resolution',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "resolution";
+                  });
+                },
+                child: Text(
+                  'Resolution',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -921,75 +1108,120 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   left: SizeConfig.blockSizeHorizontal * 4,
                   top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Language',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Analyser Data',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Weighing Scale',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Edit SNF formula',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Format Date and Time',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Edit Username',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "language";
+                  });
+                },
+                child: Text(
+                  'Language',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1,
-                  bottom: SizeConfig.blockSizeHorizontal * 1),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Edit Password',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "analyze";
+                  });
+                },
+                child: Text(
+                  'Analyser Data',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "wieghing";
+                  });
+                },
+                child: Text(
+                  'Weighing Scale',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "editsnf";
+                  });
+                },
+                child: Text(
+                  'Edit SNF Formula',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "formatdate";
+                  });
+                },
+                child: Text(
+                  'Format Date and Time',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "editusername";
+                  });
+                },
+                child: Text(
+                  'Edit Username',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: SizeConfig.blockSizeHorizontal * 4,
+                top: SizeConfig.blockSizeHorizontal * 1,
+                bottom: SizeConfig.blockSizeHorizontal * 1,
+              ),
+              alignment: Alignment.topLeft,
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "editpassword";
+                  });
+                },
+                child: Text(
+                  'Edit Password',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
           ],
@@ -1007,11 +1239,18 @@ class HomeScreenMainState extends State<HomeMainScreen> {
             Container(
               margin: EdgeInsets.only(
                   left: SizeConfig.blockSizeHorizontal * 4,
-                  top: SizeConfig.blockSizeHorizontal * 1.5),
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Version',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "version";
+                  });
+                },
+                child: Text(
+                  'Version',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -1019,20 +1258,33 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   left: SizeConfig.blockSizeHorizontal * 4,
                   top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'FAQ',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "faq";
+                  });
+                },
+                child: Text(
+                  'FAQ',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(
-                left: SizeConfig.blockSizeHorizontal * 4,
-                top: SizeConfig.blockSizeHorizontal * 1,
-              ),
+                  left: SizeConfig.blockSizeHorizontal * 4,
+                  top: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Services',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "services";
+                  });
+                },
+                child: Text(
+                  'Services',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
             Container(
@@ -1041,9 +1293,16 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                   top: SizeConfig.blockSizeHorizontal * 1,
                   bottom: SizeConfig.blockSizeHorizontal * 1),
               alignment: Alignment.topLeft,
-              child: Text(
-                'Helpline Number',
-                style: TextStyle(color: AppColors.white, fontSize: 10),
+              child: InkWell(
+                onTap: () {
+                  setState(() {
+                    type = "helpline";
+                  });
+                },
+                child: Text(
+                  'Helpline Number',
+                  style: TextStyle(color: AppColors.white, fontSize: 10),
+                ),
               ),
             ),
           ],
@@ -1225,8 +1484,8 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                         Container(
                             margin: EdgeInsets.only(
                                 left: SizeConfig.blockSizeHorizontal * 1.2),
-                            height: SizeConfig.blockSizeVertical * 15,
-                            width: SizeConfig.blockSizeHorizontal * 20,
+                            height: SizeConfig.blockSizeVertical * 18,
+                            width: SizeConfig.blockSizeHorizontal * 22,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
@@ -1239,8 +1498,8 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                         Container(
                             margin: EdgeInsets.only(
                                 left: SizeConfig.blockSizeHorizontal * 1.2),
-                            height: SizeConfig.blockSizeVertical * 15,
-                            width: SizeConfig.blockSizeHorizontal * 20,
+                            height: SizeConfig.blockSizeVertical * 18,
+                            width: SizeConfig.blockSizeHorizontal * 22,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
@@ -1253,8 +1512,8 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                         Container(
                             margin: EdgeInsets.only(
                                 left: SizeConfig.blockSizeHorizontal * 1.2),
-                            height: SizeConfig.blockSizeVertical * 15,
-                            width: SizeConfig.blockSizeHorizontal * 20,
+                            height: SizeConfig.blockSizeVertical * 18,
+                            width: SizeConfig.blockSizeHorizontal * 22,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
@@ -1304,7 +1563,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                         style: TextStyle(
                                           color: AppColors.black,
                                           fontSize:
-                                              SizeConfig.blockSizeVertical * 3,
+                                              SizeConfig.blockSizeVertical * 2,
                                         ),
                                       ),
                                     ),
@@ -1337,7 +1596,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                         style: TextStyle(
                                           color: AppColors.black,
                                           fontSize:
-                                              SizeConfig.blockSizeVertical * 3,
+                                              SizeConfig.blockSizeVertical * 2,
                                         ),
                                       ),
                                     ),
@@ -1370,7 +1629,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                         style: TextStyle(
                                           color: AppColors.black,
                                           fontSize:
-                                              SizeConfig.blockSizeVertical * 3,
+                                              SizeConfig.blockSizeVertical * 2,
                                         ),
                                       ),
                                     ),
@@ -1403,7 +1662,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                         style: TextStyle(
                                           color: AppColors.black,
                                           fontSize:
-                                              SizeConfig.blockSizeVertical * 3,
+                                              SizeConfig.blockSizeVertical * 2,
                                         ),
                                       ),
                                     ),
@@ -1438,7 +1697,7 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                                         style: TextStyle(
                                           color: AppColors.black,
                                           fontSize:
-                                              SizeConfig.blockSizeVertical * 3,
+                                              SizeConfig.blockSizeVertical * 2,
                                         ),
                                       ),
                                     ),
@@ -1449,8 +1708,8 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                       ),
                     ),
                     Container(
-                      width: SizeConfig.blockSizeHorizontal * 40,
-                      height: SizeConfig.blockSizeHorizontal * 24,
+                      width: SizeConfig.blockSizeHorizontal * 48,
+                      height: SizeConfig.blockSizeHorizontal * 21.5,
 
                       margin: EdgeInsets.only(
                           left: SizeConfig.blockSizeVertical * 2),
@@ -1503,8 +1762,8 @@ class HomeScreenMainState extends State<HomeMainScreen> {
                               ),
                               onTap: () {
                                 print("Tapped on container");
-                                Scaffold.of(context).showSnackBar(new SnackBar(
-                                    content: new Text("Sent Email")));
+                                // Scaffold.of(context).showSnackBar(new SnackBar(
+                                //     content: new Text("Sent Email")));
                               },
                             )
                           ],
@@ -1519,464 +1778,71 @@ class HomeScreenMainState extends State<HomeMainScreen> {
         ),
       );
     } else if (type == 'all account') {
-      return
-
-
-        Container(
-        width: SizeConfig.blockSizeHorizontal * 40,
-        height: SizeConfig.blockSizeHorizontal * 24,
-
-        //   width: MediaQuery.of(context).size.width/2,
-
-
-
-
-        child: Card(
-          color: AppColors.accountbgcolor,
-          elevation: 10,
-
-          child: Column(
-            children: <Widget>[
-
-
-
-
-              Container(
-                margin: EdgeInsets.only(
-                    top: 20, left: SizeConfig.blockSizeHorizontal * 1),
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'All Accounts',
-                  style: TextStyle(
-                      color: AppColors.allaccounttextcolor,
-                      fontSize: SizeConfig.blockSizeVertical * 3),
-                ),
-              ),
-              Container(
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                      margin: EdgeInsets.only(
-                        top: SizeConfig.blockSizeVertical * 3,
-                      ),
-                      width: SizeConfig.blockSizeHorizontal * 15,
-                      child: Container(
-                        color: AppColors.accountbgcolor,
-                        height: SizeConfig.blockSizeVertical * 6,
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: SizeConfig.blockSizeVertical * 2),
-                              child: Text(
-                                'Export To',
-                                style: TextStyle(
-                                  color: AppColors.black,
-                                  fontSize: SizeConfig.blockSizeVertical * 2,
-                                ),
-                              ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                print("Tapped on container");
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.only(
-                                    left: SizeConfig.blockSizeHorizontal * 1,
-                                  ),
-                                  width: SizeConfig.blockSizeHorizontal * 6,
-                                  height: SizeConfig.blockSizeVertical * 4,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              "assests/image/pdf.png"),
-                                          fit: BoxFit.fill))),
-                            )
-                          ],
-                        ),
-                      )),
-                ),
-              ),
-
-
-
-               Container(
-                  margin: EdgeInsets.only(
-                      left: SizeConfig.blockSizeHorizontal * 1,
-                      right: SizeConfig.blockSizeHorizontal * 1),
-                  height: SizeConfig.blockSizeVertical * 5,
-
-                  child : SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'SR NO.',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'CODE',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'NAME',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'NOMINEE',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'CITY',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'ADDRESS',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'PHONE NO.',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'MOBILE',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'UPI/GST',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'EMAIL',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'PAN',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'AADHAR',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,  margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'BANK BRANCH',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'ACCOUNT NO.',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 1,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'IFSC',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: SizeConfig.blockSizeHorizontal*5,
-                          margin: EdgeInsets.only(
-                            left: SizeConfig.blockSizeHorizontal * 2,
-                          ),
-
-                          //   width: MediaQuery.of(context).size.width/2,
-                          child: Text(
-                            'ACTION',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: (SizeConfig.blockSizeVertical *1.3),
-                            ),
-                          ),
-                        ),
-
-
-
-
-
-
-
-
-
-
-
-
-                      ],
-                    ),
-                    ),
-                   decoration: BoxDecoration(
-                     color: AppColors.allaccountbgcolor,
-                     borderRadius: BorderRadius.only(
-                       bottomLeft:
-                       Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                       bottomRight:
-                       Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                       topLeft:
-                       Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                       topRight:
-                       Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                     ),
-                   )
-               ),
-
-
-
-
-
-////////////////////////////////// Scroll add
-
-
-
-              Container(
-
-                 child: Container(
-                   height: SizeConfig.blockSizeHorizontal *60,
-                   child: ListView.builder(
-                       itemCount: 5,
-                       itemBuilder: (BuildContext context, int index) {
-                         return Row(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           children: [
-
-                             Radio(
-                               activeColor: AppColors.lightBlue,
-                               value: index,
-                               groupValue: select,
-                               onChanged: (value) {
-                                 setState(() {
-                                   valueRadio = index;
-                                   print(valueRadio);
-                                   select = value;
-                                 });
-                               },
-                             ),
-
-
-
-
-
-
-                             Container(
-                               alignment: Alignment.center,
-                               width: SizeConfig.blockSizeHorizontal*15,
-                               child: Text('hii',
-                                 maxLines: 2,
-                                 style: TextStyle(
-                                     color: AppColors.black,
-                                     fontFamily: 'Poppins-Normal',
-                                     fontWeight: FontWeight.normal,
-                                     fontSize: 14,
-                                     letterSpacing: 1.0),
-                               ),
-                             ),
-
-
-                           ],
-                         );
-                       }),
-                 ),
-
-                  margin: EdgeInsets.only(
-                      left: SizeConfig.blockSizeHorizontal * 1,
-                      right: SizeConfig.blockSizeHorizontal * 1,),
-                  height: SizeConfig.blockSizeVertical * 50,
-
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    borderRadius: BorderRadius.only(
-                      bottomLeft:
-                      Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                      bottomRight:
-                      Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                      topLeft:
-                      Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                      topRight:
-                      Radius.circular(SizeConfig.blockSizeHorizontal * 0.3),
-                    ),
-                  )),
-
-
-
-            ],
-          ),
-        ),
-      );
+      return AllAccounts();
+    } else if (type == 'add account') {
+      return AddAccounts();
+    } else if (type == 'bank account') {
+      return BankAccounts();
+    } else if (type == 'milk collection') {
+      return MilkCollection();
+    } else if (type == 'milk sale') {
+      return MilkSale();
+    } else if (type == 'item sale') {
+      return ItemSale();
+    } else if (type == 'payment') {
+      return Payments();
+    } else if (type == 'stoke update') {
+      return StockUpdate();
+    } else if (type == 'dispatch') {
+      return Dispatch();
+    } else if (type == 'deduct') {
+      return Deduct();
+    } else if (type == 'bonus') {
+      return Bonus();
+    } else if (type == 'purchase report') {
+      return PurchaseReport();
+    } else if (type == 'sale report') {
+      return SaleReport();
+    } else if (type == 'item sale report') {
+      return ItemSaleReport();
+    } else if (type == 'payment report') {
+      return PaymentReport();
+    } else if (type == 'stock report') {
+      return StockReport();
+    } else if (type == 'union report') {
+      return UnionReport();
+    }
+
+    // Help Desk
+
+    else if (type == 'version') {
+      return Version();
+    } else if (type == 'faq') {
+      return FAQ();
+    } else if (type == 'services') {
+      return Services();
+    } else if (type == 'helpline') {
+      return HelpDesk();
+    }
+
+    // setting
+
+    else if (type == 'resolution') {
+      return Resolution();
+    } else if (type == 'language') {
+      return Language();
+    } else if (type == 'analyze') {
+      return Analyze();
+    } else if (type == 'weigning') {
+      return Weighing();
+    } else if (type == 'editsnf') {
+      return EditSnf();
+    } else if (type == 'formatdate') {
+      return Formatdate();
+    } else if (type == 'editusername') {
+      return EditUser();
+    } else if (type == 'editpassword') {
+      return EditPass();
     }
   }
 }
